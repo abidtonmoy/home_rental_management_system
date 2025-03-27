@@ -6,24 +6,19 @@ The **House Rental Management System** is a web application that simplifies the 
 
 ## Features
 
-- User Authentication (Landlord & Tenant accounts)
+- User Authentication (Signup & Login for Manager, Admin, House Provider, and Customer)
 - Property Listings with images and descriptions
 - Search and Filter functionality for rentals
-- Online Rent Payment System
 - Booking and Scheduling for property visits
 - Tenant and Landlord Dashboard
-- Secure Payment Gateway Integration
-- Reviews and Ratings System
 - Admin Panel for managing users and properties
 
 ## Tech Stack
 
 - **Frontend:** React.js / Next.js, Tailwind CSS
 - **Backend:** Node.js, Express.js
-- **Database:** MongoDB
+- **Database:** MySQL
 - **Authentication:** JWT (JSON Web Tokens)
-- **Payment Gateway:** Stripe / PayPal
-- **Deployment:** Vercel / AWS / Heroku
 
 ## Installation & Setup
 
@@ -32,7 +27,7 @@ The **House Rental Management System** is a web application that simplifies the 
 Ensure you have the following installed:
 
 - Node.js & npm
-- MongoDB (local or cloud-based, e.g., MongoDB Atlas)
+- MySQL (local or cloud-based)
 
 ### Steps to Run Locally
 
@@ -54,41 +49,38 @@ Ensure you have the following installed:
    - Create a `.env` file in the root directory and add:
 
    ```env
-   PORT=5000
-   MONGO_URI=your_mongodb_connection_string
+   PORT=3000
+   DB_HOST=your_mysql_host
+   DB_USER=your_mysql_user
+   DB_PASSWORD=your_mysql_password
+   DB_NAME=your_database_name
    JWT_SECRET=your_jwt_secret_key
-   STRIPE_SECRET=your_stripe_secret_key
    ```
 
 4. Start the backend server:
 
    ```bash
-   npm run server
-   ```
-
-5. Start the frontend:
-
-   ```bash
-   cd client
-   npm install
    npm start
    ```
 
-6. Access the application at:
+5. Access the application at:
    ```
    http://localhost:3000
    ```
 
 ## API Endpoints
 
-| Endpoint              | Method | Description          |
-| --------------------- | ------ | -------------------- |
-| `/api/auth/register`  | POST   | Register a new user  |
-| `/api/auth/login`     | POST   | Login user           |
-| `/api/properties`     | GET    | Get all properties   |
-| `/api/properties/:id` | GET    | Get property details |
-| `/api/bookings`       | POST   | Book a property      |
-| `/api/payments`       | POST   | Process payment      |
+| Endpoint              | Method | Description           |
+| --------------------- | ------ | --------------------- |
+| `/api/auth/signup`    | POST   | Register a new user   |
+| `/api/auth/login`     | POST   | Login user            |
+| `/api/manager`        | GET    | Manager routes        |
+| `/api/admin`          | GET    | Admin routes          |
+| `/api/house-provider` | GET    | House Provider routes |
+| `/api/customer`       | GET    | Customer routes       |
+| `/api/properties`     | GET    | Get all properties    |
+| `/api/properties/:id` | GET    | Get property details  |
+| `/api/bookings`       | POST   | Book a property       |
 
 ## Contribution
 
@@ -106,4 +98,4 @@ This project is licensed under the **MIT License**.
 
 ---
 
-**Developed by Your Name**
+**Developed by Tonmoy**

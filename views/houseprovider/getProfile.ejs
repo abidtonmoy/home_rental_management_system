@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>House provider page</title>
+</head>
+
+<body>
+	<a href="/houseprovider">Home</a>|
+	<a href="/logout">Logout</a><br><br>
+	<a href="/houseprovider/profile">Edit Profile</a><br>
+	<%= user.username %><br>
+	<a href="/houseprovider/view_Rented">Message</a>|
+	<% if(user.status=="block"){ %>
+	<a href="/houseprovider/<%= table%>/<%= user.username %>">Unblock</a>
+	<%  } else{ %>
+	<a href="/houseprovider/<%= table%>/<%= user.username %>">Block</a>
+	<%  }%>
+	<h1>Profile information</h1>
+	First Name: <%= user.fname %> <br>
+	Last Name: <%= user.lname %> <br>
+	Email: <%= user.email %> <br>
+	phone: <%= user.phone %> <br>
+</body>
+
+</html>

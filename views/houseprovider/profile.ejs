@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Profile</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"
+    />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css.min.css" />
+    <link rel="stylesheet" href="/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css"
+    />
+    <link rel="stylesheet" href="/css/aos.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+      body {
+        background: linear-gradient(to right, #eacda3, #d6ae7b);
+        font-family: "Poppins", sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .site-wrap {
+        width: 80%;
+        max-width: 800px;
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .site-navbar {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .site-navbar h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .site-menu {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .site-menu a {
+        text-decoration: none;
+        color: #d6ae7b;
+        padding: 10px 15px;
+        margin: 5px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition: background-color 0.3s ease;
+      }
+
+      .site-menu a:hover {
+        background-color: #d6ae7b;
+        color: white;
+      }
+
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .table,
+      .table td {
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        text-align: left;
+      }
+
+      .table td:first-child {
+        font-weight: bold;
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 30px;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        background-color: #d6ae7b;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #c29d6f;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site-wrap">
+      <header class="site-navbar" role="banner">
+        <h2>Edit Profile</h2>
+        <nav class="site-navigation" role="navigation">
+          <ul class="site-menu">
+            <a href="/houseprovider">Home</a>
+            <a href="/logout">Logout</a>
+            <a href="/houseprovider/profile">Edit Profile</a>
+            <a href="/houseprovider/newAdvertise">House to-let</a>
+          </ul>
+        </nav>
+      </header>
+
+      <form method="post">
+        <table class="table">
+          <tr>
+            <td>First Name:</td>
+            <td>
+              <input
+                type="text"
+                name="fname"
+                value="<%= user.fname %>"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Last Name:</td>
+            <td>
+              <input
+                type="text"
+                name="lname"
+                value="<%= user.lname %>"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Prefered Username:</td>
+            <td>
+              <input
+                type="text"
+                name="uname"
+                value="<%= user.username %>"
+                readonly
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Father's name:</td>
+            <td>
+              <input
+                type="text"
+                name="fathersName"
+                value="<%= user.fathersName%>"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Mail:</td>
+            <td>
+              <input
+                type="text"
+                name="email"
+                value="<%= user.email %>"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Phone No:</td>
+            <td>
+              <input
+                type="text"
+                name="phone"
+                value="<%= user.phone %>"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td>
+              <input
+                type="password"
+                name="password"
+                value="<%= user.password %>"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Confirm Password:</td>
+            <td>
+              <input
+                type="password"
+                name="cpassword"
+                value="<%= user.password %>"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+        <input type="submit" name="" value="update" />
+      </form>
+    </div>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.stellar.min.js"></script>
+    <script src="/js/jquery.countdown.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>My Apartments</title>
+</head>
+
+<body>
+	<div>
+		<h2>My Apartments</h2>
+	</div>
+
+	<a href="/houseprovider">Home</a>|
+	<a href="/logout">Logout</a><br><br>
+
+	<table border="1">
+		<tr>
+			<td>Id</td>
+			<td>Name</td>
+			<td>Division</td>
+			<td>Area</td>
+			<td>Address</td>
+			<td>Description</td>
+			<td>size</td>
+			<td>price</td>
+			<td>review</td>
+			<td>status</td>
+		</tr>
+		<% for(var i=0; i < userlist.length; i++){ %>
+		<tr>
+			<td><%= userlist[i].houseid %></td>
+			<td><%= userlist[i].housename %></td>
+			<td><%= userlist[i].division %></td>
+			<td><%= userlist[i].area %></td>
+			<td><%= userlist[i].address %></td>
+			<td><%= userlist[i].description %></td>
+			<td><%= userlist[i].size %></td>
+			<td><%= userlist[i].price %></td>
+			<td><%= userlist[i].review %></td>
+			<td><%= userlist[i].status %></td>
+			<td>
+			<a href="/houseprovider/viewOwn/<%= userlist[i].houseid %>">Edit Advertise</a>
+			</td>
+			<td>
+				<a href="/houseprovider/viewOwn/<%= userlist[i].houseid %>">Delete Advertise </a>
+			</td>
+		</tr>
+		<%  } %>
+	</table>
+
+</body>
+
+</html>

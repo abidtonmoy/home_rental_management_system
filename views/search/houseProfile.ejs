@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Page</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background: linear-gradient(to right, #de6262, #ffb88c);
+        font-family: "Poppins", sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      h2,
+      h1 {
+        text-align: center;
+        margin-top: 30px;
+        color: #333;
+      }
+
+      .house-info {
+        width: 80%;
+        max-width: 600px;
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        line-height: 1.8;
+      }
+
+      .house-info a {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+        text-decoration: none;
+        background-color: #de6262;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .house-info a:hover {
+        background-color: #ffb88c;
+        color: #333;
+      }
+
+      .house-info strong {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Search your preferred home here</h2>
+    <h1>House information</h1>
+    <div class="house-info">
+      <p><strong>House ID:</strong> <%= user.houseid %></p>
+      <p><strong>House Name:</strong> <%= user.housename %></p>
+      <p><strong>Owners Name:</strong> <%= user.ownersname %></p>
+      <p><strong>Division:</strong> <%= user.devision %></p>
+      <p><strong>Area:</strong> <%= user.area %></p>
+      <p><strong>Address:</strong> <%= user.address %></p>
+      <p><strong>Size:</strong> <%= user.size %></p>
+      <p><strong>Description:</strong> <%= user.description %></p>
+      <p><strong>Price:</strong> <%= user.prize %></p>
+      <p><strong>Review:</strong> <%= user.review %></p>
+
+      <% if (isCustomerLoggedIn) { %>
+      <a href="/search/<%= user.houseid %>">Contact With house owner</a>
+      <% } else { %>
+      <a href="/login">Please log in as a customer to contact the owner</a>
+      <% } %>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

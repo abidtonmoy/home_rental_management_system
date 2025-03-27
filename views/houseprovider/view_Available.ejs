@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Available Apartments</title>
+    <style>
+      body {
+        background: linear-gradient(to right, #eacda3, #d6ae7b);
+        font-family: "Poppins", sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .site-wrap {
+        width: 80%;
+        max-width: 1000px; /* Increased max-width */
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      a {
+        color: #d6ae7b;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      table,
+      table td,
+      table th {
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        text-align: left;
+      }
+
+      table th {
+        background-color: #f2f2f2;
+        font-weight: bold;
+      }
+
+      table td a {
+        color: #d6ae7b;
+        text-decoration: none;
+      }
+
+      table td a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="site-wrap">
+      <div>
+        <h2>Available Apartments</h2>
+      </div>
+
+      <a href="/houseprovider">Home</a> | <a href="/logout">Logout</a
+      ><br /><br />
+
+      <table border="1">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Division</th>
+          <th>Area</th>
+          <th>Address</th>
+          <th>Description</th>
+          <th>Size</th>
+          <th>Price</th>
+          <th>Review</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+        <% for(var i=0; i < userlist.length; i++){ %>
+        <tr>
+          <td><%= userlist[i].houseid %></td>
+          <td><%= userlist[i].housename %></td>
+          <td><%= userlist[i].division %></td>
+          <td><%= userlist[i].area %></td>
+          <td><%= userlist[i].address %></td>
+          <td><%= userlist[i].description %></td>
+          <td><%= userlist[i].size %></td>
+          <td><%= userlist[i].price %></td>
+          <td><%= userlist[i].review %></td>
+          <td><%= userlist[i].status %></td>
+          <td>
+            <a href="/houseprovider/view_Available/<%= userlist[i].houseid %>"
+              >Delete</a
+            >
+          </td>
+        </tr>
+        <% } %>
+      </table>
+    </div>
+  </body>
+</html>

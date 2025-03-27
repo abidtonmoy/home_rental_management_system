@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Page</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"
+    />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css.min.css" />
+    <link rel="stylesheet" href="/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css"
+    />
+    <link rel="stylesheet" href="/css/aos.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background: linear-gradient(to right, #2193b0, #6dd5ed);
+        font-family: "Poppins", sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .site-wrap {
+        width: 80%;
+        max-width: 1200px;
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .site-navbar {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .site-navbar h2 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .site-menu {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .site-menu a {
+        text-decoration: none;
+        color: #2193b0;
+        padding: 10px 15px;
+        margin: 5px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+        transition: background-color 0.3s ease;
+      }
+
+      .site-menu a:hover {
+        background-color: #6dd5ed;
+        color: white;
+      }
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      .table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+      }
+
+      .table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #ddd;
+        text-align: left;
+      }
+
+      .table td:first-child {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-wrap">
+      <header class="site-navbar py-1" role="banner">
+        <h2 align="center">Welcome, Admin</h2>
+        <h2>Welcome home, <%= user.username %></h2>
+        <nav
+          class="site-navigation position-relative text-right text-lg-center"
+          role="navigation"
+        >
+          <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+            <a class="mb-5 text-blue" href="/logout">Logout</a>
+            <a class="mb-5 text-blue" href="/admin/profile">Edit Profile</a>
+            <a class="mb-5 text-blue" href="/admin/addNewManager"
+              >Add New Manager</a
+            >
+            <a class="mb-5 text-blue" href="/admin/assignManager"
+              >Assign Manager</a
+            >
+            <a class="mb-5 text-blue" href="/admin/view_Managers">Managers</a>
+            <a class="mb-5 text-blue" href="/admin/view_Owners">Owners</a>
+            <a class="mb-5 text-blue" href="/admin/view_Customers">Customers</a>
+            <a class="mb-5 text-blue" href="/admin/view_Rented"
+              >Rented Apartments</a
+            >
+            <a class="mb-5 text-blue" href="/admin/view_Available"
+              >Available Apartments</a
+            >
+          </ul>
+        </nav>
+      </header>
+      <h2>Personal information</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td>Name:</td>
+            <td><%= user.name %></td>
+          </tr>
+          <tr>
+            <td>UserName:</td>
+            <td><%= user.username %></td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td><%= user.email %></td>
+          </tr>
+          <tr>
+            <td>phone:</td>
+            <td><%= user.phone %></td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td><%= user.password %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.stellar.min.js"></script>
+    <script src="/js/jquery.countdown.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Customers</title>
+</head>
+
+<body>
+	<div>
+		<h2>Customers</h2>
+	</div>
+
+	<a href="/houseprovider">Home</a>|
+	<a href="/logout">Logout</a><br><br>
+
+	<table border="1">
+		<tr>
+			<td>First Name</td>
+			<td>Last Name</td>
+			<td>USERNAME</td>
+			<td>Email</td>
+			<td>Phone</td>
+			<td>Nid</td>
+			<td>No of report</td>
+			<td>status</td>
+		</tr>
+		<% for(var i=0; i < userlist.length; i++){ %>
+		<tr>
+			<td><%= userlist[i].fname %></td>
+			<td><%= userlist[i].lname %></td>
+			<td><%= userlist[i].username %></td>
+			<td><%= userlist[i].email %></td>
+			<td><%= userlist[i].phone %></td>
+			<td><%= userlist[i].nid %></td>
+			<td><%= userlist[i].reportNo %></td>
+			<td><%= userlist[i].status %></td>
+			<td>
+				<a href="/houseprovider/view_Customers/<%= userlist[i].username %>">View Profile </a>
+			</td>
+		</tr>
+		<%  } %>
+	</table>
+
+</body>
+
+</html>

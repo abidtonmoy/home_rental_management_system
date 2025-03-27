@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Rental Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Playfair+Display:200,300,400,700"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      body {
+        background: linear-gradient(
+          135deg,
+          #07c8f9,
+          #09a6f3,
+          #0a85ed,
+          #0c63e7,
+          #0d41e1
+        );
+        font-family: "Poppins", sans-serif;
+        color: white;
+      }
+      .site-header {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px 0;
+        text-align: center;
+      }
+      .site-navigation ul {
+        list-style: none;
+        padding: 0;
+      }
+      .site-navigation ul li {
+        display: inline;
+        margin: 0 15px;
+      }
+      .site-navigation ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .site-navigation ul li a:hover {
+        color: #07c8f9; /* Keeping it in the gradient range */
+      }
+      .btn {
+        background: #0a85ed; /* Using a middle color from the gradient */
+        color: white;
+        padding: 12px 24px;
+        border-radius: 25px;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .btn:hover {
+        background: #0c63e7; /* Using a slightly darker color from the gradient */
+      }
+      .inner-page-cover {
+        background-size: cover;
+        background-position: center;
+        padding: 120px 0;
+      }
+      .site-section {
+        padding: 60px 0;
+      }
+      .site-footer {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 50px 0;
+        text-align: center;
+      }
+      .footer-heading {
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      .newsletter {
+        margin-top: 20px;
+      }
+      .newsletter input[type="email"] {
+        padding: 12px;
+        width: 60%;
+        border: none;
+        border-radius: 5px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+      .newsletter button {
+        padding: 12px 24px;
+        background: #0a85ed;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .newsletter button:hover {
+        background: #0c63e7;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>Welcome to Home Rental Management System</h1>
+      <nav class="site-navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/login">Login</a></li>
+          <li><a href="/signup">Sign Up</a></li>
+          <li><a href="/search">Search Home</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="welcome-section text-center site-section">
+        <div class="container">
+          <p>
+            Find the perfect home for you. Login or sign up to explore available
+            properties.
+          </p>
+          <a href="/search" class="btn">Search Now</a>
+        </div>
+      </section>
+      <section
+        class="inner-page-cover"
+        style="background-image: url('images/home1.jpg')"
+      >
+        <div class="container text-center">
+          <h1 class="text-white">About Home Rental Management System</h1>
+          <p class="text-white">
+            This website helps users find their dream homes effortlessly.
+          </p>
+        </div>
+      </section>
+      <div class="site-section border-top text-center">
+        <div class="container">
+          <h2 class="mb-4">Want To Get Our Service?</h2>
+          <a href="/signup" class="btn">Sign Up Now</a>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <h3 class="footer-heading">About Houses</h3>
+            <p>
+              You will get the best houses within your range, so don't be late!
+            </p>
+          </div>
+          <div class="col-lg-4">
+            <h3 class="footer-heading">Navigations</h3>
+            <ul class="list-unstyled">
+              <li><a href="/">Home</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/signup">Sign Up</a></li>
+              <li><a href="/search">Search</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4">
+            <h3 class="footer-heading">Subscribe Newsletter</h3>
+            <p>Subscribe to get notifications from us.</p>
+            <div class="newsletter">
+              <input type="email" placeholder="Enter your email" />
+              <button>Subscribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

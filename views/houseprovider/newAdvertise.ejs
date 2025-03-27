@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>houseprovider page</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #eacda3, #d6ae7b);
+            font-family: "Poppins", sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .site-wrap {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        a {
+            color: #d6ae7b;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        table,
+        table td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #d6ae7b;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #c29d6f;
+        }
+    </style>
+</head>
+<body>
+    <div class="site-wrap">
+        <h2>Add new Advertise</h2>
+        <a href="/houseprovider">Home</a> | 
+        <a href="/logout">Logout</a><br><br>
+
+        <form method="post">
+            <table border="1">
+                <tr>
+                    <td>Division:</td>
+                    <td>
+                        <script>
+                            function random_function() {
+                                var a = document.getElementById("Area").value;
+                                if (a === "Chittagong") {
+                                    var arr = ["Agrabad", "Chandgaon R/A", "Chawkbazar", "Anderkilla", "GEC", "Khulshi"];
+                                } else if (a === "Dhaka") {
+                                    var arr = ["Bashundhara R/A", "Dhanmondi R/A", "Banani", "Uttara", "Mirpur", "Nikunja"];
+                                } else if (a === "Khulna") {
+                                    var arr = ["Bashundhara R/A", "Dhanmondi R/A", "Banani", "Uttara", "Mirpur", "Nikunja"];
+                                }
+
+                                var string = "";
+
+                                for (i = 0; i < arr.length; i++) {
+                                    string = string + "<option value=" + arr[i] + ">" + arr[i] + "</option>";
+                                }
+                                document.getElementById("output").innerHTML = string;
+                            }
+                        </script>
+                        <select id="Area" name="Area" value="Area" onchange="random_function()">
+                            <option>select option</option>
+                            <option>Chittagong</option>
+                            <option>Dhaka</option>
+                            <option>Khulna</option>
+                        </select>
+
+                        <div>
+                            <select id="output" name="output" value="output" onchange="random_function1()">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>House Name :</td>
+                    <td><input type="text" name="hname" required></td>
+                </tr>
+                <tr>
+                    <td>Full Address: </td>
+                    <td><input type="text" name="faddress" required></td>
+                </tr>
+                <tr>
+                    <td>Advertise Description: </td>
+                    <td><input type="text" name="addescription" required></td>
+                </tr>
+                <tr>
+                    <td>Size: </td>
+                    <td><input type="text" name="size" required></td>
+                </tr>
+                <tr>
+                    <td>Price: </td>
+                    <td><input type="text" name="price" required></td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

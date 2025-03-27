@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Up Page</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #bdc3c7, #2c3e50);
+            font-family: "Poppins", sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .signup-container {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        table td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: calc(100% - 18px);
+            padding: 8px;
+            margin: 3px 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.95em;
+        }
+
+        input[type="submit"] {
+            background-color: #E0ECDE; /* Changed button color */
+            color: #2c3e50; /* Darker color for button text */
+            padding: 10px 18px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #D1E5D5; /* Slightly darker hover color */
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9em;
+            margin-top: 3px;
+        }
+
+        a {
+            color: black; /* Changed home link color to black */
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        select {
+            color: black; /* Making dropdown black */
+        }
+
+        select option {
+            color: black; /* Making dropdown options black */
+        }
+
+        select:hover {
+            background-color: #E0ECDE; /* Hover color for select */
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="signup-container">
+        <h2>Sign Up Page</h2>
+        <a href="/">Home</a>
+        <form method="post">
+            <table>
+                <tr>
+                    <td>First Name: </td>
+                    <td><input type="text" name="fname" value="<%= typeof user !== 'undefined' && user.fname ? user.fname : '' %>" required></td>
+                    <% if(typeof error !== 'undefined' && error.fname != null){ %>
+                    <td class="error-message"><%= error.fname.msg %></td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>Last Name: </td>
+                    <td><input type="text" name="lname" value="<%= typeof user !== 'undefined' && user.lname ? user.lname : '' %>" required></td>
+                    <% if(typeof error !== 'undefined' && error.lname != null){ %>
+                    <td class="error-message"><%= error.lname.msg %></td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>Preferred Username: </td>
+                    <td><input type="text" name="uname" value="<%= typeof user !== 'undefined' && user.uname ? user.uname : '' %>" required></td>
+                    <% if(typeof error !== 'undefined' && error.uname != null){ %>
+                    <td class="error-message"><%= error.uname.msg %></td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>User Type:</td>
+                    <td>
+                        <select name="usertype">
+                            <option value="">select</option>
+                            <option value="House Provider" <%= typeof user !== 'undefined' && user.usertype === 'House Provider' ? 'selected' : '' %>>House Provider</option>
+                            <option value="Customer" <%= typeof user !== 'undefined' && user.usertype === 'Customer' ? 'selected' : '' %>>Customer</option>
+                        </select>
+                    </td>
+                    <% if(typeof error !== 'undefined' && error.usertype != null){ %>
+                    <td class="error-message"><%= error.usertype.msg %></td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>Father's Name: </td>
+                    <td><input type="text" name="fathersName" value="<%= typeof user !== 'undefined' && user.fathersName ? user.fathersName : '' %>" required></td>
+                    <% if(typeof error !== 'undefined' && error.fathersName != null){ %>
+                    <td class="error-message"><%= error.fathersName.msg %></td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td><input type="text" name="email" value="<%= typeof user !== 'undefined' && user.email ? user.email : '' %>" required></td>
+                    <% if(typeof error !== 'undefined' && error.email != null){ %>
+                    <td class="error-message"><%= error.email.msg %></td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>Phone No: </td>
+                    <td><input type="text" name="phone" value="<%= typeof user !== 'undefined' && user.phone ? user.phone : '' %>" required></td>
+                    <% if(typeof error !== 'undefined' && error.phone != null){ %>
+                    <td class="error-message"><%= error.phone.msg %></td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>National ID: </td>
+                    <td><input type="text" name="nid" value="<%= typeof user !== 'undefined' && user.nid ? user.nid : '' %>" required></td>
+                    <% if(typeof error !== 'undefined' && error.nid != null){ %>
+                    <td class="error-message"><%= error.nid.msg %></td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td><input type="password" name="password" value="<%= typeof user !== 'undefined' && user.password ? user.password : '' %>" required></td>
+                    <% if(typeof error !== 'undefined' && error.password != null){ %>
+                    <td class="error-message"><%= error.password.msg %></td>
+                    <% } %>
+                </tr>
+                <tr>
+                    <td>Confirm Password:</td>
+                    <td><input type="password" name="cpassword" value="<%= typeof user !== 'undefined' && user.cpassword ? user.cpassword : '' %>" required></td>
+                    <% if(typeof error !== 'undefined' && error.cpassword != null){ %>
+                    <td class="error-message"><%= error.cpassword.msg %></td>
+                    <% } %>
+                </tr>
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+        <a href="/login">Already have account? Click to Login</a>
+    </div>
+</body>
+
+</html>

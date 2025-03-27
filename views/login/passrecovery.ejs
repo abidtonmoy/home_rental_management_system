@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Password Recovery</title>
+    <style>
+      body {
+        background: linear-gradient(to right, #42275a, #734b6d);
+        font-family: "Poppins", sans-serif;
+        color: white;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .recovery-container {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 90%;
+        text-align: left; /* Changed text alignment to left */
+      }
+
+      h2 {
+        font-size: 2em;
+        margin-bottom: 15px;
+        text-align: center; /* Center the heading */
+      }
+
+      form {
+        width: 100%;
+      }
+
+      label,
+      input,
+      select {
+        display: block;
+        width: calc(100% - 16px);
+        margin: 8px 0;
+        padding: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 0.9em;
+      }
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="white" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+        background-repeat: no-repeat;
+        background-position: right 8px top 50%;
+        padding-right: 25px;
+        background-color: #333;
+        color: white;
+        border: 1px solid #555;
+      }
+
+      select:hover {
+        background-color: #444;
+      }
+
+      select option {
+        background-color: #333;
+        color: white;
+      }
+
+      input[type="submit"] {
+        background-color: black;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: bold;
+        font-size: 0.9em;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #333;
+      }
+
+      a {
+        color: #734b6d;
+        text-decoration: none;
+        display: block;
+        margin-top: 15px;
+        font-size: 0.9em;
+        text-align: center; /* Center the links */
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .security-question {
+        margin: 8px 0;
+        font-style: italic;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="recovery-container">
+      <h2>Password Recovery</h2>
+      <a href="/">Home</a>
+      <form method="post">
+        <label for="usertype">User Type:</label>
+        <select name="usertype" id="usertype">
+          <option value="Manager">Manager</option>
+          <option value="House Provider">House Provider</option>
+          <option value="Customer">Customer</option></select
+        ><br />
+
+        <label for="uname">Username:</label>
+        <input type="text" name="uname" id="uname" required /><br />
+
+        <div class="security-question">
+          Security Question: What is your father's name?
+        </div>
+        <label for="fathersName">Answer:</label>
+        <input type="text" name="fathersName" id="fathersName" required /><br />
+
+        <label for="password">New Password:</label>
+        <input type="password" name="password" id="password" required /><br />
+
+        <input type="submit" value="Submit" />
+      </form>
+      <a href="/login">Sign In</a>
+    </div>
+  </body>
+</html>

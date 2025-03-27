@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login page</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,700,900|Display+Playfair:200,300,400,700"
+    />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css.min.css" />
+    <link rel="stylesheet" href="/css/magnific-popup.css" />
+    <link rel="stylesheet" href="/css/jquery-ui.css" />
+    <link rel="stylesheet" href="/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.css" />
+    <link rel="stylesheet" href="/fonts/flaticon/font/flaticon.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css"
+    />
+    <link rel="stylesheet" href="/css/aos.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <style>
+      body {
+        background: linear-gradient(to right, #2193b0, #6dd5ed);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      .site-wrap {
+        width: 100%;
+        max-width: 400px;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .site-wrap h2 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+
+      select.form-control {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 16px;
+        padding-right: 30px;
+      }
+
+      .btn-default {
+        background-color: #2193b0;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .btn-default:hover {
+        background-color: #6dd5ed;
+      }
+
+      .text-black {
+        color: #333;
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        text-decoration: none;
+      }
+
+      .text-black:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-wrap">
+      <header class="site-navbar py-1" role="banner">
+        <h2 align="center">Login Form</h2>
+      </header>
+      <form method="post">
+        <div class="form-group">
+          <label class="text-black">Usertype:</label>
+          <select name="usertype" class="form-control">
+            <option value="Admin">Admin</option>
+            <option value="Manager">Manager</option>
+            <option value="House Provider">House Provider</option>
+            <option value="Customer">Customer</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="text-black">Username:</label>
+          <input
+            type="text"
+            class="form-control"
+            name="uname"
+            required
+            placeholder="Enter username"
+          />
+        </div>
+        <div class="form-group">
+          <label class="text-black" for="pwd">Password:</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            required
+            placeholder="Enter password"
+          />
+        </div>
+        <div class="form-group">
+          <button type="submit" name="" value="Submit" class="btn btn-default">
+            Submit
+          </button>
+          <a class="text-black" href="/login/passrecover">forgot password?</a
+          ><br />
+          <a class="text-black" href="/signup"
+            >Dont have account? click to create account</a
+          >
+        </div>
+      </form>
+    </div>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/js/jquery-ui.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.stellar.min.js"></script>
+    <script src="/js/jquery.countdown.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Interested Customers</title>
+</head>
+
+<body>
+	<div>
+		<h2>Interested Customers</h2>
+	</div>
+
+	<a href="/houseprovider">Home</a>|
+	<a href="/logout">Logout</a><br><br>
+
+	<table border="1">
+		<tr>
+			<td>Customer Name</td>
+			<td>House Owner Name</td>
+			<td>House ID</td>
+		</tr>
+		<% for(var i=0; i < userlist.length; i++){ %>
+		<tr>
+			<td><%= userlist[i].customername %></td>
+			<td><%= userlist[i].houseownername %></td>
+			<td><%= userlist[i].houseid %></td>
+			<td>
+				<a href="/houseprovider/view_Customers/<%= userlist[i].customername %>">View Profile </a>
+			</td>
+		</tr>
+		<%  } %>
+	</table>
+
+</body>
+
+</html>

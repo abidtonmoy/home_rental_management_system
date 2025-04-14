@@ -178,6 +178,20 @@ INSERT INTO `managerinfo` (`fname`, `lname`, `username`, `password`, `email`, `p
 ('Abid Hasan', 'Tonmoy', 'manager', 'manager', 'ashiqulhoque45@gmail.com', 1670464084, NULL, NULL, 'something', 16704, 'block');
 
 
+
+--Creating Maid
+CREATE TABLE IF NOT EXISTS maids (
+    maidid INTEGER PRIMARY KEY AUTOINCREMENT,  -- Or SERIAL for PostgreSQL
+    name VARCHAR(255),
+    phone VARCHAR(20),
+    address VARCHAR(255),
+    status VARCHAR(20)
+);
+
+INSERT INTO maids (name, phone, address, status) VALUES
+('Alice Smith', '123-456-7890', '123 Main St', 'active'),
+('Bob Johnson', '987-654-3210', '456 Oak Ave', 'away'),
+('Charlie Brown', '555-123-4567', '789 Pine Ln', 'not available');
 --
 -- Indexes for dumped tables
 --

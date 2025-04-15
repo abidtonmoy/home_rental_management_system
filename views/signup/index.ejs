@@ -138,7 +138,7 @@
                         <select name="usertype">
                             <option value="">select</option>
                             <option value="House Provider" <%= typeof user !== 'undefined' && user.usertype === 'House Provider' ? 'selected' : '' %>>House Provider</option>
-                            <option value="Customer" <%= typeof user !== 'undefined' && user.usertype === 'Customer' ? 'selected' : '' %>>Customer</option>
+                            <option value="Customer" <%= typeof user !== 'undefined' && user.usertype === 'Customer' ? 'selected' : '' %>>Tenant</option>
                         </select>
                     </td>
                     <% if(typeof error !== 'undefined' && error.usertype != null){ %>

@@ -99,29 +99,28 @@ INSERT INTO `customerinfo` (`fname`, `lname`, `username`, `password`, `email`, `
 -- -- --------------------------------------------------------
 CREATE TABLE `houseinfo` (
   `houseid` int(10) NOT NULL,
-  `housename` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `division` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `area` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `housename` varchar(256) NOT NULL,
+  `division` varchar(256) NOT NULL,
+  `area` varchar(256) NOT NULL,
+  `address` text NOT NULL,
   `size` int(10) NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text NOT NULL,
   `prize` int(10) NOT NULL,
-  `review` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `status` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL
+  `review` varchar(256) NOT NULL,
+  `status` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `houseinfo`
 --
 
-INSERT INTO `houseinfo` (`houseid`, `housename`, `division`, `area`, `address`, `size`, `description`, `prize`, `review`, `status`) 
-VALUES
-(1, 'House A', 'Dhaka', 'Uttara', 'Uttara House Address 1', 1500, 'Description for House A', 20000, 'Good', 'Available'),
-(2, 'House B', 'Dhaka', 'Uttara', 'Uttara House Address 2', 1700, 'Description for House B', 25000, 'Excellent', 'Available'),
-(3, 'House C', 'Dhaka', 'Uttara', 'Uttara House Address 3', 1900, 'Description for House C', 30000, 'Very Good', 'Available'),
-(4, 'House D', 'Chittagong', 'GEC', 'GEC House Address 1', 1500, 'Description for House D', 40000, 'Good', 'Available'),
-(5, 'House E', 'Chittagong', 'GEC', 'GEC House Address 2', 1800, 'Description for House E', 45000, 'Excellent', 'Available'),
-(6, 'House F', 'Chittagong', 'GEC', 'GEC House Address 3', 2000, 'Description for House F', 50000, 'Very Good', 'Available');
+INSERT INTO `houseinfo` (`houseid`, `housename`, `division`, `area`, `address`, `size`, `description`, `prize`, `review`, `status`) VALUES
+(1, 'White House', 'Dhaka', 'Ashulia', 'Dattapara,Ashulia,Dhaka', 1500, 'Two rooms\r\nKitchen\r\nTwo bathrooms\r\nElectricity available\r\nAdditional Monthly Fees:\r\nGas Bill: 800Tk\r\nWater Bill: 200Tk\r\nMaid Service (Buya) Bill: 3000Tk\r\nTrash (Moila) Bill: 100Tk\r\nWifi Bill: 700Tk\r\nGas and maid services not included in base rent.', 20000, 'Good', 'Available'),
+(2, 'Rahat Villa', 'Dhaka', 'Ashulia', 'Dattapara,Ashulia,Dhaka', 1700, 'Two rooms\r\nKitchen\r\nTwo bathrooms\r\nElectricity available\r\nAdditional Monthly Fees:\r\nGas Bill: 800Tk\r\nWater Bill: 200Tk\r\nMaid Service (Buya) Bill: 3000Tk\r\nTrash (Moila) Bill: 100Tk\r\nWifi Bill: 700Tk\r\nGas and maid services included in base rent.', 25000, 'Excellent', 'Available'),
+(3, 'Grap Town', 'Dhaka', 'Ashulia', 'Dattapara,Ashulia,Dhaka', 1900, 'Two rooms\r\nKitchen\r\nTwo bathrooms\r\nElectricity available\r\nAdditional Monthly Fees:\r\nGas Bill: 800Tk\r\nWater Bill: 200Tk\r\nMaid Service (Buya) Bill: 3000Tk\r\nTrash (Moila) Bill: 100Tk\r\nWifi Bill: 700Tk\r\nGas and maid services not included in base rent.', 30000, 'Very Good', 'Available'),
+(4, 'Ahsan Nibash', 'Dhaka', 'Ashulia', 'Changaon,Ashulia,Dhaka', 1500, 'Two rooms Kitchen Two bathrooms Electricity available Additional Monthly Fees: Gas Bill: 800Tk Water Bill: 200Tk Maid Service (Buya) Bill: 3000Tk Trash (Moila) Bill: 100Tk Wifi Bill: 700Tk Gas and maid services not included in base rent.', 40000, 'Good', 'Available'),
+(5, 'Russian Tower', 'Dhaka', 'Ashulia', 'Model Town,Ashulia,Dhaka', 1800, 'Two rooms Kitchen Two bathrooms Electricity available Additional Monthly Fees: Gas Bill: 800Tk Water Bill: 200Tk Maid Service (Buya) Bill: 3000Tk Trash (Moila) Bill: 100Tk Wifi Bill: 700Tk Gas and maid services not included in base rent.', 45000, 'Excellent', 'Available'),
+(6, 'Bachelor Paradise', 'Dhaka', 'Ashulia', 'Dattapara,Ashulia,Dhaka', 2000, 'Two rooms Kitchen Two bathrooms Electricity available Additional Monthly Fees: Gas Bill: 800Tk Water Bill: 200Tk Maid Service (Buya) Bill: 3000Tk Trash (Moila) Bill: 100Tk Wifi Bill: 700Tk Gas and maid services not included in base rent.', 50000, 'Very Good', 'Available');
 
 
 --

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -165,4 +165,199 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Page</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background: linear-gradient(to right, #de6262, #ffb88c);
+        font-family: "Poppins", sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      h2 {
+        text-align: center;
+        margin-top: 30px;
+        color: #333;
+      }
+
+      form {
+        width: 80%;
+        max-width: 800px;
+        margin: 20px auto;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      select,
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        background-color: #de6262;
+        color: white;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #ffb88c;
+      }
+
+      td a {
+        color: #de6262;
+        text-decoration: none;
+      }
+
+      td a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Search your preferred home here</h2>
+    <form method="post">
+      <table>
+        <tr>
+          <td>Location:</td>
+          <td>
+            <select id="Area" name="Area" onchange="random_function()">
+              <option>Dhaka</option>
+            </select>
+            <div>
+              <select id="output" name="output" required>
+                <option value="Ashulia">Ashulia</option>
+              </select>
+            </div>
+          </td>
+          <td>Size:</td>
+          <td>
+            <select name="size">
+              <option value="< 1000">Below 1000ft</option>
+              <option value="BETWEEN 1000 AND 1500">1000ft to 1500ft</option>
+              <option value="BETWEEN 1500 AND 2000">1500ft to 2000ft</option>
+              <option value="BETWEEN 2000 AND 2500">2000ft to 2500ft</option>
+              <option value="BETWEEN 2500 AND 3000">2500ft to 3000ft</option>
+              <option value="BETWEEN 3000 AND 3500">3000ft to 3500ft</option>
+              <option value="BETWEEN 3500 AND 4000">3500ft to 4000ft</option>
+            </select>
+          </td>
+          <td>Price:</td>
+          <td>
+            <select name="price">
+              <option value="< 1000">Below 10000</option>
+              <option value="BETWEEN 10000 AND 15000">10000 to 15000</option>
+              <option value="BETWEEN 15000 AND 20000">15000 to 20000</option>
+              <option value="BETWEEN 20000 AND 25000">20000 to 25000</option>
+              <option value="BETWEEN 25000 AND 30000">25000 to 30000</option>
+              <option value="BETWEEN 30000 AND 35000">30000 to 35000</option>
+              <option value="BETWEEN 35000 AND 40000">35000 to 40000</option>
+              <option value="BETWEEN 40000 AND 50000">40000 to 50000</option>
+              <option value="BETWEEN 50000 AND 60000">50000 to 60000</option>
+            </select>
+          </td>
+          <td>
+            <input type="submit" value="Search" />
+          </td>
+        </tr>
+      </table>
+      <table border="1">
+        <tr>
+          <th>Division</th>
+          <th>Area</th>
+          <th>Size</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+        <% for(var i=0; i < userlist.length; i++){ %>
+        <tr>
+          <td><%= userlist[i].division %></td>
+          <td><%= userlist[i].area %></td>
+          <td><%= userlist[i].size %></td>
+          <td><%= userlist[i].description %></td>
+          <td><%= userlist[i].prize %></td>
+          <td><a href="/search/<%= userlist[i].houseid %>">View home</a></td>
+        </tr>
+        <% } %>
+      </table>
+    </form>
+    <script>
+      function random_function() {
+        var a = document.getElementById("Area").value;
+        var arr;
+        if (a === "Dhaka") {
+          arr = ["Ashulia"];
+        }
+        var string = "";
+        for (var i = 0; i < arr.length; i++) {
+          string += "<option value='" + arr[i] + "'>" + arr[i] + "</option>";
+        }
+        document.getElementById("output").innerHTML = string;
+      }
+
+      // Initialize the second dropdown with "Ashulia" on page load
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("output").innerHTML =
+          "<option value='Ashulia'>Ashulia</option>";
+      });
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfKtjo="
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

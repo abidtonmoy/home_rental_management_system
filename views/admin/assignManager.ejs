@@ -133,33 +133,8 @@
             <script>
               function random_function() {
                 var a = document.getElementById("Area").value;
-                if (a === "Chittagong") {
-                  var arr = [
-                    "Agrabad",
-                    "Chandgaon R/A",
-                    "Chawkbazar",
-                    "Anderkilla",
-                    "GEC",
-                    "Khulshi",
-                  ];
-                } else if (a === "Dhaka") {
-                  var arr = [
-                    "Bashundhara R/A",
-                    "Dhanmondi R/A",
-                    "Banani",
-                    "Uttara",
-                    "Mirpur",
-                    "Nikunja",
-                  ];
-                } else if (a === "Khulna") {
-                  var arr = [
-                    "Bashundhara R/A",
-                    "Dhanmondi R/A",
-                    "Banani",
-                    "Uttara",
-                    "Mirpur",
-                    "Nikunja",
-                  ];
+                if (a === "Dhaka") {
+                  var arr = ["Ashulia"];
                 }
                 var string = "";
                 for (i = 0; i < arr.length; i++) {
@@ -176,7 +151,7 @@
             </script>
             <select id="Area" name="division" onchange="random_function()">
               <option value="">select option</option>
-              <option value="Chittagong">Chittagong</option>
+
               <option value="Dhaka">Dhaka</option>
             </select>
             <div>

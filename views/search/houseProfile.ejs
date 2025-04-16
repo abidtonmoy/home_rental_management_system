@@ -76,12 +76,6 @@
       <p><strong>Description:</strong> <%= user.description %></p>
       <p><strong>Price:</strong> <%= user.prize %></p>
       <p><strong>Review:</strong> <%= user.review %></p>
-
-      <% if (isCustomerLoggedIn) { %>
-      <a href="/search/<%= user.houseid %>">Contact With house owner</a>
-      <% } else { %>
-      <a href="/login">Please log in as a customer to contact the owner</a>
-      <% } %>
     </div>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"

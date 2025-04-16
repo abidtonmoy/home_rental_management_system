@@ -5,7 +5,7 @@ var getConnection = function (callback) {
     host: "127.0.0.1",
     user: "root",
     password: "",
-    database: "home-rental-management-system2",
+    database: "home-rental-management-system3",
   });
 
   connection.connect(function (err) {

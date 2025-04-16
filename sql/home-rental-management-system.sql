@@ -70,33 +70,6 @@ CREATE TABLE `customerinfo` (
 INSERT INTO `customerinfo` (`fname`, `lname`, `username`, `password`, `email`, `phone`, `type`, `fathersName`, `nid`, `reportNo`, `status`) VALUES
 ('Abid Hasan', 'Tonmoy', 'customer', 'customer', 'ehat', '0356', 'available', 'adhgja', 'sdfds', 0, 'unblock');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `houseinfo`
---
-
--- CREATE TABLE `houseinfo` (
---   `houseid` int(10) NOT NULL,
---   `housename` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
---   `division` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
---   `area` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
---   `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
---   `size` int(10) NOT NULL,
---   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
---   `prize` int(10) NOT NULL,
---   `review` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
---   `status` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --
--- -- Dumping data for table `houseinfo`
--- --
-
--- INSERT INTO `houseinfo` (`houseid`, `housename`, `division`, `area`, `address`, `size`, `description`, `prize`, `review`, `status`) VALUES
--- (2, 'ad', 'ddfdfdffdfff', 'dfdf', 'dfdfdf', 322, 'asas', 2365, 'asdkjdbkadjda,askjdsjkda,ldhdalsd', 'rented');
-
--- -- --------------------------------------------------------
 CREATE TABLE `houseinfo` (
   `houseid` int(10) NOT NULL,
   `housename` varchar(256) NOT NULL,
@@ -176,21 +149,27 @@ CREATE TABLE `managerinfo` (
 INSERT INTO `managerinfo` (`fname`, `lname`, `username`, `password`, `email`, `phone`, `division`, `area`, `fathersName`, `nid`, `status`) VALUES
 ('Abid Hasan', 'Tonmoy', 'manager', 'manager', 'ashiqulhoque45@gmail.com', 1670464084, NULL, NULL, 'something', 16704, 'block');
 
+-- Maid All  -- Corrected: Added a space after the double dashes
 
-
---Creating Maid
-CREATE TABLE IF NOT EXISTS maids (
-    maidid INTEGER PRIMARY KEY AUTOINCREMENT,  -- Or SERIAL for PostgreSQL
-    name VARCHAR(255),
-    phone VARCHAR(20),
-    address VARCHAR(255),
-    status VARCHAR(20)
+CREATE TABLE `maidinfo` (
+  `maidid` INT NOT NULL,
+  `name` VARCHAR(100),
+  `phone` VARCHAR(20),
+  `address` VARCHAR(100),
+  `status` VARCHAR(50),
+  PRIMARY KEY (`maidid`)
 );
 
-INSERT INTO maids (name, phone, address, status) VALUES
-('Alice Smith', '123-456-7890', '123 Main St', 'active'),
-('Bob Johnson', '987-654-3210', '456 Oak Ave', 'away'),
-('Charlie Brown', '555-123-4567', '789 Pine Ln', 'not available');
+INSERT INTO `maidinfo` (`maidid`, `name`, `phone`, `address`, `status`) VALUES
+(1, 'Alisa Khatun', '01712345678', 'Dhanmondi, Dhaka', 'active'),
+(2, 'Bibi Begum', '01898765432', 'Mirpur, Dhaka', 'away'),
+(3, 'Chhobi Akter', '01955555555', 'Banani, Dhaka', 'not available'),
+(4, 'Ruma Khatun', '01622233344', 'Uttara, Dhaka', 'active'),
+(5, 'Sumi Begum', '01577788899', 'Mohakhali, Dhaka', 'away'),
+(6, 'Lata Mia', '01399900011', 'Gulshan, Dhaka', 'not available');
+
+
+
 --
 -- Indexes for dumped tables
 --

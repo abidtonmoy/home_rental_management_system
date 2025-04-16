@@ -97,13 +97,9 @@
                         <script>
                             function random_function() {
                                 var a = document.getElementById("Area").value;
-                                if (a === "Chittagong") {
-                                    var arr = ["Agrabad", "Chandgaon R/A", "Chawkbazar", "Anderkilla", "GEC", "Khulshi"];
-                                } else if (a === "Dhaka") {
-                                    var arr = ["Bashundhara R/A", "Dhanmondi R/A", "Banani", "Uttara", "Mirpur", "Nikunja"];
-                                } else if (a === "Khulna") {
-                                    var arr = ["Bashundhara R/A", "Dhanmondi R/A", "Banani", "Uttara", "Mirpur", "Nikunja"];
-                                }
+                                if (a === "Dhaka") {
+                                    var arr = ["Ashulia"];
+                                } 
 
                                 var string = "";
 
@@ -115,9 +111,9 @@
                         </script>
                         <select id="Area" name="Area" value="Area" onchange="random_function()">
                             <option>select option</option>
-                            <option>Chittagong</option>
+                            
                             <option>Dhaka</option>
-                            <option>Khulna</option>
+                           
                         </select>
 
                         <div>
